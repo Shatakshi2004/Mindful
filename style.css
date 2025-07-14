@@ -1,0 +1,162 @@
+/*start general styles*/
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+h1,h2,h3,h4{
+  margin: 0px;
+}
+body{
+  font-family: sans-serif;
+  padding: 10px;
+  perspective: 2000px;
+}
+.background{
+  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)) , url("../illustration-anime-city.jpg");
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/*end general styles*/
+.book{
+  max-width: 500px;
+  height: 400px;
+  margin:50px auto;
+  border-radius: 3px;
+  position: relative;
+}
+/*start pages style*/
+.page-one,.page-two,
+.page-three,.page-four{
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  border-radius: 3px;
+  left: 0;
+  transition: all 1s;
+  transform-style: preserve-3d;
+  transform-origin: right;
+  backface-visibility: hidden;
+  background-color: #fff;
+  /*box-shadow: 0px 0px 4px #000*/
+}
+.back{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 400px;
+  /*background-color: #fff;*/
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  /*border-radius: 3px;*/
+  z-index: 5;
+  box-shadow: 2px 0px 0px #999 inset
+}
+/*end pages style*/
+/*start log-in page style*/
+.page-four .log-in{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 20px;
+}
+.page-four a{
+  text-decoration: none;
+  color: #FFEBCD
+}
+.page-four a span{
+  color: #C71585
+}
+.page-four .btn{
+  margin: 10px 0px;
+}
+.page-four .log-in form{
+  max-width: 350px;
+  margin:20px auto;
+}
+.page-four .log-in form .input-group{
+  margin-bottom: 20px;
+}
+/*end log-in page style*/
+/*start sign-up-pages*/
+.personal-info,
+.contact-info,
+.acount-info{
+  padding: 20px
+}
+.personal-info form,
+.contact-info form,
+.acount-info form{
+  max-width: 350px;
+  margin: auto;
+}
+.personal-info .btn,
+.contact-info .btn,
+.acount-info .btn{
+  position: absolute;
+  bottom: 1px;
+  left: 1px;
+}
+.personal-info .form-control,
+.contact-info .form-control,
+.acount-info .form-control{
+  margin: 20px 0px;
+}
+/*end sign-up-pages*/
+/*start open*/
+.open{
+  transform: rotateY(180deg);
+  transform-origin: right;
+}
+.z-index-next{
+  z-index: 7;
+}
+.z-index-prev{
+  z-index: 6;
+}
+.move-left{
+  left: -250px;
+  animation: move-left 1s;
+}
+@keyframes move-left{
+  0%{
+    left: 0px;
+  }
+  100%{
+    left: -250px;
+  }
+}
+.move-right{
+  left: 0px;
+  animation: move-right 1s;
+}
+@keyframes move-right{
+  0%{
+    left: -250px;
+  }
+  100%{
+    left: 0px;
+  }
+}
+@media (max-width: 1020px){
+  .move-left{
+    left: 0px;
+    animation: none;
+  }
+  .book{
+    left: 0px;
+    overflow: hidden;
+  }
+  .open{
+    transform-origin: center;
+  }
+  .back{
+    display: none
+  }
+}
+/*end open*/
